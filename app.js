@@ -22,8 +22,8 @@ app.get('/hello2', function(req, res) {
 	res.status(403).end();
 });
 
-app.listen(3000, function() {
-	console.log("Starting server on port: " + 3000);
+app.listen(process.env.PORT || 3000, function() {
+	console.log("Starting server on port: " + (process.env.PORT || 3000));
 });
 
 app.use('/users', users);
