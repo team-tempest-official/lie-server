@@ -5,6 +5,7 @@ var app 	= module.exports = express();
 var db 		= require("./model/db");
 var mongoose= require("mongoose");
 
+app.set('port', (process.env.PORT || 3000));
 
 var users = require("./routes/users");
 var decks = require("./routes/decks");
@@ -22,8 +23,8 @@ app.get('/hello2', function(req, res) {
 	res.status(403).end();
 });
 
-app.listen(process.env.PORT || 3000, function() {
-	console.log("Starting server on port: " + (process.env.PORT || 3000));
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
 
 app.use('/users', users);
