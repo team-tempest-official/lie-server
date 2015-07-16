@@ -1,0 +1,33 @@
+{
+  "name": "lie-server",
+  "version": "1.0.0",
+  "description": "The server for LIE.",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "mongoose": "^4.0.7",
+    "nodemon": "^1.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/team-tempest-official/lie-server.git"
+  },
+  "keywords": [
+    "LIE",
+    "server"
+  ],
+  "author": "Team Tempest",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/team-tempest-official/lie-server/issues"
+  },
+  "homepage": "https://github.com/team-tempest-official/lie-server#readme"
+}
