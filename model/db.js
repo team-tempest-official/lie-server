@@ -34,4 +34,5 @@ var port = process.env.MONGO_PORT || '';
 var admin = process.env.MONGO_ADMIN || '';
 var pass = process.env.MONGO_ADMIN_PASS || '';
 
+console.log('mongodb://' + admin + ':' + pass + '@' + url + ':' + port)
 mongoose.connect('mongodb://' + admin + ':' + pass + '@' + url + ':' + port);
