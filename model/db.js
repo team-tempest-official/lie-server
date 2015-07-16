@@ -29,10 +29,12 @@ mongoose.model('Decks', Decks);
 mongoose.model('Cards', Cards);
 
 
-var url = process.env.MONGO_HOST || 'localhost/lie-server';
+var url = process.env.MONGO_HOST || 'localhost';
 var port = process.env.MONGO_PORT || '';
+var collection = process.env.MONGO_COLLECTION || 'lie-server';
 var admin = process.env.MONGO_ADMIN || '';
 var pass = process.env.MONGO_ADMIN_PASS || '';
 
-console.log('mongodb://' + admin + ':' + pass + '@' + url + ':' + port)
-mongoose.connect('mongodb://' + admin + ':' + pass + '@' + url + ':' + port);
+
+console.log('mongodb://' + admin + ':' + pass + '@' + url + ':' + port + '/' + collection)
+mongoose.connect('mongodb://' + admin + ':' + pass + '@' + url + ':' + port + '/' + collection);
