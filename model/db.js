@@ -29,4 +29,9 @@ mongoose.model('Decks', Decks);
 mongoose.model('Cards', Cards);
 
 
-mongoose.connect('mongodb://localhost/lie-server');
+var url = process.env.MONGO_HOST || 'localhost/lie-server';
+var port = process.env.MONGO_PORT || '';
+var admin = process.env.MONGO_ADMIN || '';
+var pass = process.env.MONGO_ADMIN_PASS || '';
+
+mongoose.connect('mongodb://' + admin + ':' + pass + '@' + url + ':' + port);
