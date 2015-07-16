@@ -53,8 +53,10 @@ router.post('/create', function(req, res) {
 		"user_name": 	name,
 		"user_decks":   []
 	}).save(function(error, todo, count) {
-		if (error) {
-			if (error.indexOf("E11000") != -1) {
+		console.log(error)
+		if (error != undefined) {
+			console.log(error)
+			if (error["code"] == 11000) {
 				res.status(400).send('{"message" : "User already exists"}');
 			}
 
