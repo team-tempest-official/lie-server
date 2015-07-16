@@ -38,8 +38,6 @@ function validateEmail(email) {
 
 router.post('/create', function(req, res) {
 
-	console.log(req.body);
-	console.log(res.body);
 
 	var email 	= req.body.email;
 	var name 	= req.body.name;
@@ -53,14 +51,14 @@ router.post('/create', function(req, res) {
 	new Users({
 		"user_email": 	email,
 		"user_name": 	name,
-		"user_decks":   null
+		"user_decks":   []
 	}).save(function(error, todo, count) {
 		if (error) {
 			console.log("Error: " + error);
 			res.status(500).end();
 		} else {
 			console.log("* Created user: " + name + " with email: " + email);
-			res.redirect("/");
+			res.status(200).end();
 		}
 
 	});
